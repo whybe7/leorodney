@@ -1,0 +1,26 @@
+{
+  "name": "lerodeny-server",
+  "version": "1.0.0",
+  "description": "the server side for leorodeny app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "leorodeny",
+    "ai",
+    "openai",
+    "dalle",
+    "image-generator"
+  ],
+  "author": "whybe7",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongose": "^0.0.2-security"
+  }
+}
