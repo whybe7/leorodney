@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+    --orange-clr: #dc5319;
+    --orange-clr-drk: #9e421b;
+    --orange-clr-drk-op: #9e421ba1;
+    --blue-clr: #1fa3b3;
+    --blue-clr-drk: #185d65;
+    --oil-clr: #8C6700;
+}
+
+*{
+    box-sizing: border-box;
+    color: white;
+}
