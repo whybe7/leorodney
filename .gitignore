@@ -23,4 +23,8 @@
 **/.sln
 **/.sw?
 
-**/.env
+# Envirement variables
+**/server/.env
+
+# Rest client vscode ext
+**/.http
