@@ -27,4 +27,4 @@
 **/server/.env
 
 # Rest client vscode ext
-**/.http
+**.http
