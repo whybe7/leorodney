@@ -4,11 +4,11 @@ import Search from "./Search";
 
 import HomeBG from '../assets/home.png';
 
-export default function Hero({setSearch}) {
+export default function Hero({setSearch, prompts, setPrompts}) {
   return (
     <main className="w-screen h-[80vh] pl-20 pr-4 gap-16 flex flex-col items-end justify-center" style={{backgroundImage: `url(${HomeBG})`}}>
         <Header/>
-        <Search setSearch={setSearch}/>
+        <Search setSearch={setSearch} prompts={prompts} setPrompts={setPrompts}/>
         <Links/>
     </main>
   )

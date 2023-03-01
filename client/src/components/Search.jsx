@@ -1,12 +1,17 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-export default function Search({setSearch}) {
+export default function Search({setSearch, prompts, setPrompts}) {
   const searchRef = useRef();
 
   const handelSearch = ()=>{
-    setSearch(searchRef.current.value)
+    const searchQuery = searchRef.current.value;
+    const promptsCopy = prompts;
+    setSearch(searchQuery)
+    if(!searchQuery) { return setPrompts(promptsCopy) };
+    setPrompts(prompts.filter(prompt => prompt.author.toLowerCase() == searchQuery.toLowerCase() || prompt.value.toLowerCase().includes(searchQuery.toLowerCase())))
   }
+
 
   return (
     <div className="w-full flex items-center gap-4">
