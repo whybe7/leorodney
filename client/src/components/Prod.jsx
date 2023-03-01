@@ -25,7 +25,6 @@ export default function Prod() {
     if(!prompt.value){ return console.error("Prompt Must not be empty") }
     try {
       setGenerating(true);
-      // const response = await axios.post(`${import.meta.env.VITE_SERVER_HOOK_API}/leorodney`, prompt);
       const response = await axios.post(`${import.meta.env.VITE_SERVER_HOOK_API}/leorodney`, {prompt: prompt.value});
       setPrompt({...prompt,  img: `data:image/png;base64,${response.data.img}`});
     } catch (error) {
