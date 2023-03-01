@@ -16,3 +16,17 @@
     box-sizing: border-box;
     color: white;
 }
+
+body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--blue-clr);
+    border-radius: 20px;
+}
