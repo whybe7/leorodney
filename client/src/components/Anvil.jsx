@@ -1,10 +1,11 @@
 import axios from "axios";
 import IMGPlaceholder from '../assets/placeholder.png';
-import Alert from "./Alert";
+// import Alert from "./Alert"; Not Implemented yet
 import Loader from "./Loader";
-
+import { useNavigate } from "react-router-dom";
 
 export default function Anvil({generating, prompt}) {
+  const navigate = useNavigate();
 
   const publishPrompt = async e=>{
     e.preventDefault();
@@ -12,7 +13,8 @@ export default function Anvil({generating, prompt}) {
     try{
       const response = await axios.post(`${import.meta.env.VITE_SERVER_HOOK_API}/prompt`, prompt);
       console.log(response.data);
-      alert("Your Prompt created successfully");
+      alert("Your Prompt created successfully and now you will be rederected to the community show cases!");
+      navigate("/");
     }catch(error){
       console.error(error);
     }
