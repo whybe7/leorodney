@@ -3,20 +3,26 @@ import IMGPlaceholder from '../assets/placeholder.png';
 // import Alert from "./Alert"; Not Implemented yet
 import Loader from "./Loader";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Anvil({generating, prompt}) {
   const navigate = useNavigate();
+  const [publishing, setPublishing] = useState(false);
 
   const publishPrompt = async e=>{
     e.preventDefault();
     if(!prompt.author) return alert("You must provide your name to reference your prompt in the community show cases");
     try{
+      setPublishing(true)
       const response = await axios.post(`${import.meta.env.VITE_SERVER_HOOK_API}/prompt`, prompt);
       console.log(response.data);
       alert("Your Prompt created successfully and now you will be rederected to the community show cases!");
       navigate("/");
     }catch(error){
       console.error(error);
+      alert("Something went wromg!.");
+    }finally{
+      setPublishing(false);
     }
   }
 
@@ -29,7 +35,7 @@ export default function Anvil({generating, prompt}) {
         </div>
         <form onSubmit={publishPrompt} className="w-full flex items-center gap-4">
           <a download={"Leorodney-GeneratedImg"} href={prompt.img} className={`w-1/2 py-2 ${ !prompt.img ? "opacity-0 scale-0": ""} text-center bg-green-700 rounded-md transition-all`}>Download</a>
-          <button className={`w-1/2 ${ !prompt.img ? "opacity-0 scale-0": ""} py-2 text-center bg-[var(--blue-clr-drk)] rounded-md transition-all`} type="submit" title='Publish to Community'>Publish</button>
+          <button className={`w-1/2 ${ !prompt.img ? "opacity-0 scale-0": ""} py-2 text-center bg-[var(--blue-clr-drk)] rounded-md transition-all`} type="submit" title='Publish to Community'>{publishing ? "Publishing..." : "Publish"}</button>
         </form>
     </section>
     </>
