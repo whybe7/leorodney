@@ -15,7 +15,6 @@ export default function Home() {
         setLoading(true);
         const response = await axios.get(`${import.meta.env.VITE_SERVER_HOOK_API}/community`);
         setPrompts(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error(error)
       }finally{

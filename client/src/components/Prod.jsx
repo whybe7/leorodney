@@ -35,7 +35,7 @@ export default function Prod() {
 }
 
   return (
-    <main className="relative w-screen h-screen px-10 gap-10 flex flex-col items-center justify-center " style={{backgroundImage: `url(${ProductionBG})`}}>
+    <main className="relative w-screen px-10 max-[640px]:py-4 max-[640px]:px-2 gap-10 max-[640px]:gap-5 flex flex-col items-center justify-center" style={{backgroundImage: `url(${ProductionBG})`}}>
         <Header twHeader={"flex justify-center items-center flex-col"} twTitleX={"text-7xl"} twImg={"h-42 w-42"} twPX={"text-lg"}/>
         <Prompt generateImg={generateImg} handelPrompt={handelPrompt} prePrompt={prePrompt} prompt={prompt} generating={generating}/>
         <Anvil generating={generating} prompt={prompt}/>
