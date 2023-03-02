@@ -7,6 +7,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [prompts, setPrompts] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(()=>{
     (async ()=>{
@@ -25,8 +26,8 @@ export default function Home() {
 
   return (
     <>
-    <Hero setSearch={setSearch} prompts={prompts} setPrompts={setPrompts}/>
-    <Community search={search} prompts={prompts} loading={loading}/>
+    <Hero setSearch={setSearch} prompts={prompts} setSearchResults={setSearchResults}/>
+    <Community search={search} prompts={prompts} searchResults={searchResults} loading={loading}/>
     </>
   )
 }
