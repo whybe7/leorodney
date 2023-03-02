@@ -3,7 +3,7 @@ import { downloadPomptImg } from "../utils";
 export default function Card({_id, author, value, img}) {
   return (
     <div className="relative group flex justify-center items-center rounded-md overflow-hidden">
-      <img src={img} alt={value} loading="lazy" className="w-full h-full object-cover"/>
+      <img src={img} alt={value} className="w-full h-full object-cover"/>
       <div className="absolute rounded-md p-3 left-1/2 -translate-x-1/2 bottom-[-120%] group-hover:bottom-2 transition-all max-h-[80%] w-[90%] bg-slate-200 ">
         <div className="flex justify-between items-center">
           <span className="font-bold block underline text-xl mb-2 text-black">{author}</span>
