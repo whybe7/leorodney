@@ -14,7 +14,7 @@ export default function Anvil({generating, prompt}) {
     if(!prompt.author) return alert("You must provide your name to reference your prompt in the community show cases");
     try{
       setPublishing(true)
-      const response = await axios.post(`${"leorodney.up.railway.app"}/prompt`, prompt);
+      const response = await axios.post(`${import.meta.env.VITE_SERVER_HOOK_API}/prompt`, prompt);
       console.log(response.data);
       alert("Your Prompt created successfully and now you will be rederected to the community show cases!");
       navigate("/");
