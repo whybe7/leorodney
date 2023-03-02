@@ -13,7 +13,7 @@ export default function Home() {
     (async ()=>{
       try {
         setLoading(true);
-        const response = await axios.get(`${import.meta.env.VITE_SERVER_HOOK_API}/community`);
+        const response = await axios.get(`${"leorodney.up.railway.app"}/community`);
         setPrompts(response.data);
       } catch (error) {
         console.error(error)
